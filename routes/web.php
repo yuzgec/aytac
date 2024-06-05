@@ -1,0 +1,79 @@
+<?php
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
+use Illuminate\Support\Facades\Route;
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/iletisim', [HomeController::class, 'contact'])->name('contactus');
+Route::get('/sayfa/{url}', [HomeController::class, 'corporatedetail'])->name('corporatedetail');
+
+//Hizmetler Route
+Route::get('/hizmetlerimiz', [HomeController::class, 'services'])->name('services');
+Route::get('/hizmet/{url}', [HomeController::class, 'service'])->name('service');
+
+Route::get('/production/{url}', [HomeController::class, 'production'])->name('production');
+
+//Hizmetler Route
+
+Route::get('/makaleler', [HomeController::class, 'blog'])->name('blog');
+Route::get('/makale/{url}', [HomeController::class, 'blogdetail'])->name('blogdetail');
+
+Route::get('/sss', [HomeController::class, 'faq'])->name('faq');
+Route::post('/form', [HomeController::class, 'form'])->name('form');
+
+//Shop
+
+Route::get('/store', [ShopController::class, 'store'])->name('store');
+Route::get('/urun/{url}', [ShopController::class, 'product'])->name('product');
+Route::get('/kategori/{url}', [ShopController::class, 'category'])->name('category');
+Route::get('/sepet', [ShopController::class,'cart'])->name('cart');
+Route::get('/favori', [ShopController::class,'wishlist'])->name('wishlist');
+Route::post('/addtocart', [ShopController::class,'addtocart'])->name('addtocart');
+Route::post('/cartdelete/{rowId}', [ShopController::class,'cartdelete'])->name('cartdelete');
+
+Route::get('/odeme', [ShopController::class,'checkout'])->name('checkout');
+Route::post('/odeme-paytr', [ShopController::class,'pay'])->name('pay');
+
+Route::get('/odeme-alindi',[ShopController::class,'success'])->name('success');
+Route::get('/odeme-hata',[ShopController::class,'failed'])->name('failed');
+
+Route::get('/districts/{city}', [ShopController::class,'getDistricts']);
+
+
+
+Route::group(["prefix"=>"go", 'middleware' => ['auth','web', 'admin']],function() {
+    Route::get('/', 'DashboardController@index')->name('go');
+
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/formlar', 'DashboardController@formlar')->name('formlar');
+    Route::delete('/formDelete/{id}', 'DashboardController@formDelete')->name('formDelete');
+    Route::auto('/page', PageController::class);
+    Route::auto('/page-categories', PageCategoryController::class);
+    Route::auto('/blog', BlogController::class);
+    Route::auto('/blog-categories', BlogCategoryController::class);
+    Route::auto('/faq', FaqController::class);
+    Route::auto('/faq-categories', FaqCategoryController::class);
+    Route::auto('/gallery', GalleryController::class);
+    Route::auto('/service', ServiceController::class);
+    Route::auto('/service-categories', ServiceCategoryController::class);
+    Route::auto('/gallery-categories', GalleryCategoryController::class);
+    Route::auto('/slider', SliderController::class);
+    Route::auto('/video', VideoController::class);
+    Route::auto('/video-categories', VideoCategoryController::class);
+    Route::auto('/settings', SettingController::class);
+    Route::auto('/product', ProductController::class);
+    Route::auto('/product-categories', ProductCategoryController::class);
+    Route::auto('/contact', ContactController::class);
+    Route::auto('/features', FeaturesController::class);
+    Route::auto('/reference', ReferenceController::class);
+    Route::auto('/price', PriceController::class);
+    Route::auto('/attribute', AttributesController::class);
+    Route::auto('/attributevalue', AttributeValueController::class);
+    Route::auto('/order', OrderController::class);
+
+});
+
+require __DIR__.'/auth.php';
