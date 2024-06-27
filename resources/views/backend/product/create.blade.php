@@ -65,59 +65,80 @@
                     @endforeach
                 </div>
                 @endforeach
+{{-- <div class="form-group mb-3 row">
+    <label class="form-label col-3 col-form-label">Variyantlar
+    </label>
+    <div class="col">
+        <a wire:click="createVariants" class="btn btn-primary">Varyant Oluştur</a>
+    </div>
+</div>
 
-                <div class="form-group mb-3 row">                    
-                    <label class="form-label col-3 col-form-label">Variyantlar </label>
-                    <div class="col">
-                        <a wire:click="createVariants" class="btn btn-primary">Varyant Oluştur</a>
-                    </div>
-                </div>
+<div class="form-group mb-3 row">
+    <label class="form-label col-3 col-form-label">Variyantlar
+    </label>
+    <div class="col">
 
-                <div class="form-group mb-3 row">
-                    <label class="form-label col-3 col-form-label">Variyantlar </label>
-                    <div class="col">
+        <div class="accordion" id="accordion-example">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-1">
+                    <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-1"
+                        aria-expanded="true">
+                        Kırmızı S
+                    </button>
+                </h2>
+                <div
+                    id="collapse-1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#accordion-example"
+                    style="">
+                    <div class="accordion-body pt-0">
+                        <div class="mt-2"></div>
 
-                        <div class="accordion" id="accordion-example">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading-1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true">
-                                    Kırmızı S
-                                    </button>
-                                </h2>
-                                <div id="collapse-1" class="accordion-collapse collapse show" data-bs-parent="#accordion-example" style="">
-                                    <div class="accordion-body pt-0">
-                                        <div class="mt-2"></div>
-
-                                        <div class="form-group mb-3 row">
-                                            <label class="form-label col-3 col-form-label">Fiyat </label>
-                                            <div class="col-5">
-                                                <div class="input-group mb-2">
-                                                    <span class="input-group-text">₺</span>
-                                                    <input type="text" class="form-control  @if($errors->has('sku')) is-invalid @endif" name="price" placeholder="Fiyat Giriniz" autocomplete="off" value="{{ old('price') }}">
-                                                    @if($errors->has('price'))
-                                                        <div class="invalid-feedback" style="display: block">{{$errors->first('price')}}</div>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="input-group mb-2">
-                                                    <span class="input-group-text">₺</span>
-                                                    <input type="text" class="form-control" name="old_price" placeholder="Eski Fiyat Giriniz" autocomplete="off" value="{{ old('old_price') }}">
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                        <x-form-inputtext label="Stok" name="v_sku"/>
-                                        <x-form-textarea label="Açıklama" name="v_desc" :ck/>
-
+                        <div class="form-group mb-3 row">
+                            <label class="form-label col-3 col-form-label">Fiyat
+                            </label>
+                            <div class="col-5">
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text">₺</span>
+                                    <input
+                                        type="text"
+                                        class="form-control  @if($errors->has('sku')) is-invalid @endif"
+                                        name="price"
+                                        placeholder="Fiyat Giriniz"
+                                        autocomplete="off"
+                                        value="{{ old('price') }}">
+                                        @if($errors->has('price'))
+                                        <div class="invalid-feedback" style="display: block">{{$errors->first('price')}}</div>
+                                        @endif
                                     </div>
                                 </div>
+                                <div class="col-4">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">₺</span>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="old_price"
+                                            placeholder="Eski Fiyat Giriniz"
+                                            autocomplete="off"
+                                            value="{{ old('old_price') }}"></div>
+                                    </div>
+
+                                </div>
+                                <x-form-inputtext label="Stok" name="v_sku"/>
+                                <x-form-textarea label="Açıklama" name="v_desc" :ck=":ck"/>
+
                             </div>
-                           
                         </div>
                     </div>
-                </div>
 
+                </div>
+            </div>
+        </div> --}}
                 <div class="form-group mb-3 row">
                     <label class="form-label col-3 col-form-label">Listele </label>
                     <div class="col-3">

@@ -39,7 +39,7 @@
                                 @php
                                 // Seçili kategori ID'lerini bir dizi olarak al
                                 $selectedCategories = $Pivot->pluck('category_id')->toArray();
-                                renderCategoriesEdit($Product_Categories, $selectedCategories)
+                                renderCategoriesEdit($categories, $selectedCategories)
                                 @endphp
                             </select>
                         </div>
