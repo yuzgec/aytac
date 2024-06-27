@@ -5,10 +5,7 @@
          <div class="row">
              <div class="intro-wrapper col-lg-9 mt-4 mb-4">
                  <div class="swiper-container swiper-theme pg-inner pg-white animation-slider"
-                     data-swiper-options="{
-                     'spaceBetween': 0,
-                     'slidesPerView': 1
-                 }">
+                     data-swiper-options="{'spaceBetween': 0,'slidesPerView': 1}">
                      <div class="swiper-wrapper row gutter-no cols-1">
                          <div class="swiper-slide banner banner-fixed intro-slide intro-slide1 br-sm"
                              style="background-image: url(/front/images/demos/demo12/slides/intro-3.jpg); background-color: #3F3E3A;">
@@ -85,7 +82,6 @@
                                  </h5>
                              </div>
                          </div>
-                         <!-- End of Intro Slide 3 -->
                      </div>
                      <div class="swiper-pagination"></div>
                  </div>
@@ -107,7 +103,6 @@
                          </a>
                      </div>
                  </div>
-                 <!-- End of Intro Banner -->
                  <div class="banner banner-fixed intro-banner intro-banner2 br-sm mb-4">
                      <figure class="br-sm">
                          <img src="/front/images/demos/demo12/banner/banner-2.jpg" alt="Category Banner"

@@ -104,8 +104,9 @@ class ProductController extends Controller
     {
         $Edit = Product::with(['getCategory'])->find($id);
         $Pivot = ProductCategoryPivot::where(['product_id'=> $id])->get();
+        $Kategori = ProductCategory::get()->toFlatTree();
 
-        return view('backend.product.edit', compact('Edit','Pivot'));
+        return view('backend.product.edit', compact('Edit','Pivot','Kategori'));
     }
 
     public function update(ProductRequest $request, $id)
